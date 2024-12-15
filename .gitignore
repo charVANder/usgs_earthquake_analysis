@@ -1,0 +1,8 @@
+# Ignore the data files
+data/
+data.geojson
+
+# Ignore other stuff
+.DS_Store
+__pycache__
+.ini
