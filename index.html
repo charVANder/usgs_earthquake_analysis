@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DS5020 Quakes Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("images/andes_mountains.jpeg"); 
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
+
+/* Evenly space the items */
+.w3-row.w3-padding.w3-dark-grey {
+  display: flex;
+  justify-content: space-around;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Links -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-dark-grey">
+    <div class="w3-col s2">
+      <a href="#" class="w3-button w3-block w3-dark-grey">HOME</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="#intro" class="w3-button w3-block w3-dark-grey">INTRODUCTION</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="#menu" class="w3-button w3-block w3-dark-grey">VISUALIZATION</a>
+    </div>
+    <div class="w3-col s2">
+        <a href="#conclusion" class="w3-button w3-block w3-dark-grey">CONCLUSION</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="#more" class="w3-button w3-block w3-dark-grey">MORE</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header w/ image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home" title="Image source: https://images.interestingengineering.com/1200x675/filters:format(webp)/2023/04/26/image/jpeg/W2HbJOfLX8uUVqUxGytFpWjqaxA6iXE5uAUNLabN.jpg">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-text-white">The Roux Institute at Northeastern</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:100px">Earthquakes in the Andes</span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-text-white">Spring 2024 DS5020 Class</span>
+  </div>
+</header>
+
+<!-- Background stuff for the whole page -->
+<div class="w3-sand w3-grayscale-min w3-large">
+
+<!-- Introduction Stuff -->
+<div class="w3-container" id="intro">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide w3-dark-grey">INTRODUCTION</span></h5>
+    <p>Earthquakes are a result of volcanic activity and movements occurring within the earth's crust. In particular, major earthquakes are often
+      confined to particularly active regions in the world, corresponding to the edges of tectonic plates which brush up against
+      each other and release tension in the form of tremors and quakes. One of these active regions is the Andes region along the
+      western coast of South America. As shown in the image below, the Andes region is located right along the edges of the Nazca and
+      South American tectonic plates, making it a hot spot for seismic activity.</p>
+    <div style="text-align:center;">
+        <img src="images/andes_plates.jpeg" alt="Tectonic plates in the Andes region" title="Image source: https://alearningfamily.com/main/wp-content/uploads/Andes.jpg" style="width:100%;max-width:600px;" class="w3-margin-top">
+    </div>
+    <p>The collision between the oceanic Nazca plate and the continental South American plate is also said to have given rise to the formation of the Andes!
+      For more information on plate tectonics, mountains, and earthquakes, consider reading the National Geographic encyclopedic entry
+      <a href="https://education.nationalgeographic.org/resource/plate-tectonics/" target="_blank" class="w3-hover-text-blue">here</a>.</p>
+    <div style="text-align:center;">
+        <img src="images/nazca_plate_subduction.jpeg" alt="Nazca plate subducting under the South American plate" title="Image source: https://learnodo-newtonic.com/wp-content/uploads/2016/08/Diagram-of-Nazca-Plate-subducting-beneath-the-South-American-plate.jpg" style="width:100%;max-width:600px;" class="w3-margin-top">
+    </div>
+    <p>By gathering and analyzing earthquake data from the United States Geological Survey, we are able to observe the seismic activity
+      occurring in the Andes region. This includes data such as the earthquake magnitudes, depths of the tremors, and the coordinates and times of each earthquake.
+      More specifically, by using this data, we are able to provide visual evidence of tectonic plate subduction in the Andes region--a
+      likely cause to the numerous earthquakes that occur in that region every year. You can view our findings in the section below!</p>
+  </div>
+</div>
+
+<!-- Visualization Stuff -->
+<div class="w3-container" id="menu">
+  <div class="w3-content" style="max-width:700px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide w3-dark-grey">VISUALIZATION</span></h5>
+    <p>Use the toggle to switch between methods of data visualization.</p>
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'GIF');" id="gifLink">
+        <div class="w3-col s4 tablink">Animation</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'StaticImage');">
+        <div class="w3-col s4 tablink">Static Image</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Scatterplot');">
+        <div class="w3-col s4 tablink">Scatterplot</div>
+      </a>
+    </div>
+
+    <div id="GIF" class="w3-container menu w3-card">
+      <!-- GIF content here -->
+      <div class="w3-panel w3-border w3-light-grey">
+        <p>This animation displays all the earthquakes recorded over time in the Andes region from 1/31/2023 to 1/31/2024. The depths of each
+          earthquake are shown with the color bar on the side. As you can see, as time goes on, the earthquakes move increasingly inland while
+          simultaneously increasing in depth. This suggests that the earthquakes are consistently generated by the subduction of the Nazca plate
+          under the South American plate.</p>
+      </div>
+      <img src="images/combined.gif" style="width:100%;max-width:1000px;">
+    </div>
+
+    <div id="StaticImage" class="w3-container menu w3-card">
+      <!-- Static Image content here -->
+      <div class="w3-panel w3-border w3-light-grey">
+        <p>The image below is a static visualization of the animation, providing a snapshot of all earthquakes in the region during the same time period.
+          As one might expect, the clustered distribution of earthquakes appears along delineated lines around the edges of the tectonic plates.
+          Similar patterns can also be found in other parts of the world. The shallowest earthquakes in the Andes occur about 100-200km deep near the coast,
+          while the deepest earthquake occurs near Bolivia around 600km deep.</p>
+      </div>
+      <img src="images/static_image.jpeg" style="width:100%;max-width:1000px;">
+    </div>
+
+    <div id="Scatterplot" class="w3-container menu w3-card">
+      <!-- Scatterplot content here -->
+      <div class="w3-panel w3-border w3-light-grey">
+        <p>This is the corresponding scatterplot of the depths and magnitudes of all the USGS recorded earthquakes from the Andes Region in a year.
+          For the most part, the magnitudes of the earthquakes remain relatively constant regardless of the depth.
+          The magnitudes mostly range from 4.0 to 5.0 with the exception of a few outliers. Similarly, the depths mostly range from 100-300km deep.
+          All in all, based purely on depths and magnitudes, the earthquakes that occurred in the Andes over the year appear fairly consistent with
+          the exception of a few outliers. Had this not been the case, there might have been a need for an in-depth study with regards to public safety. 
+          For example, a sporadic influx of unusually high-magnitude earthquakes might suggest a concern for a major earthquake occurring in the future.</p>
+      </div>
+      <img src="images/scatterplot.jpeg" style="width:100%;max-width:1000px;">
+    </div>
+  </div>
+</div>
+
+<!-- Conclusion Stuff -->
+<div class="w3-container" id="conclusion">
+    <div class="w3-content" style="max-width:700px">
+      <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide w3-dark-grey">CONCLUSION</span></h5>
+      <p>Analyzing the earthquake data in the Andes region reveals insights into tectonic plate interactions and seismic activity,
+        illustrating the nature and evolution of the earthquakes over time. The animation, static image, and scatter plot highlight the inland movement
+        and increasing depth of seismic events over time, indicating tectonic plate subduction. Furthermore, the consistent patterns of earthquake
+        magnitudes and depths imply a stable seismic behavior in that region. This can be essential when evaluating potential risks with regards
+        to public safety. For example, identifying abnormal activity from the region's normally stable state could provide preemptive warnings
+        for major earthquakes. The region can then better prepare their communities and/or infrastructure for those risks and minimize impact.</p>
+      <p>One of the benefits of these studies is that they can offer reproducible insights in other seismically active regions worldwide.
+        Moreover, a deeper analysis of the earthquake data would enhance our understanding of seismic behavior, improving earthquake prediction
+        and mitigation strategies. Additional analyses for this study in the future might include:</p>
+      <ul>
+          <li><u>Analyzing other regions</u> - comparing information between different high-risk areas to reveal new patterns that improve earthquake detection accuracy.</li>
+          <li><u>Adding additional geospatial datasets (topography, fault lines, etc.)</u> - overlaying datasets in a GIS (Geographic Information Systems) environment to
+            provide a more comprehensive understanding.</li>
+          <li><u>Enhanced depth analysis</u> - further analyzing earthquake depth distributions to better understand the interactions within the earth's crust.</li>
+          <li><u>Enhanced time analysis</u> - expanding upon the data by analyzing longer periods of time, historical patterns, seasons, etc.</li>
+          <li><u>Integrating machine learning</u> - utilizing complex algorithms on larger datasets to aid with earthquake detection.</li>
+      </ul>
+    </div>
+  </div>
+
+<!-- More Info Stuff -->
+<div class="w3-container" id="more" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide w3-dark-grey">FOR MORE INFORMATION</span></h5>
+    <p>For more detailed information regarding the creation of this project, head over to the GitHub repository found <a href="INSERT URL HERE" target="_blank" class="w3-hover-text-blue">here</a>! </p>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer: CAN UPDATE HREF ONCE SITE IS ACTIVE -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-medium">
+  <p>Copyright © 2024 under terms of the <a href="https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt" target="_blank" class="w3-hover-text-blue">MIT License</a></p>
+</footer>
+
+<script>
+// Toggle Container
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("gifLink").click(); // Default to the animation tab
+</script>
+
+</body>
+</html>
