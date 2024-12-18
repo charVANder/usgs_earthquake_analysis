@@ -48,7 +48,7 @@ Doing so should generate a GIF of the static images set based on depth in the fi
     <img src="figs/combined.gif" width="550">
 </p><br>
 
-### *See website for more (TBD):*
+### *See website for more:*
 A GitHub-pages site has been created using modified Bootstrap. You can read more about this data in the URL provided [here](https://charvander.github.io/usgs_earthquake_analysis/)
 
 
