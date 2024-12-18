@@ -19,6 +19,6 @@ for file in files_list:
         data = gpd.read_file(f)
         collection.append(data)
 
-# saving the newly concatenated file
+# Saving the newly concatenated file
 with open('../data/merged_data.geojson', 'w') as f:
     geojson.dump(pd.concat(collection), f)
