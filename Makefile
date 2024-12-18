@@ -6,7 +6,7 @@ data:
 	cd src; python merge_data.py
 	cd src; python depth_mag.py
 
-images:
+figures:
 	cd src; python merged_graph.py
 	cd src; python depth_graph.py
 	cd src; python depth_vs_mag_graph.py
