@@ -67,14 +67,9 @@ A GitHub-pages site has been created using modified Bootstrap. You can read more
   </ul>
 </details>
 <details>
-<summary>Online Sources</summary>
-  <ul>
-    <li>tbd</li>
-  </ul>
-</details>
-<details>
 <summary>Human Resources</summary>
   <ul>
-    <li>tbd</li>
+    <li>Special thanks to <a href="https://github.com/pbogden">Dr. Philip Bogden</a> and <a href="https://github.com/rahiljhaveri">Rahil Jhaveri</a> for their guidance and the numerous git tutorials.
+</li>
   </ul>
 </details>
